@@ -2,7 +2,7 @@
 import CustomImage from '@/components/customImage/custom-image';
 import React from 'react';
 
-const FeaturedPost = ({ title = "", blogData }) => {
+const FeaturedPost = ({ title = "", blogData = [] }) => {
     return (
         <div className="featured-post flex flex-col lg:flex-row gap-6 bg-white shadow-xl p-6 rounded-lg my-5">
             {/* Section Title */}
