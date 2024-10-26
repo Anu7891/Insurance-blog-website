@@ -1,6 +1,6 @@
+import React from "react";
 import { APP_NAME } from "@/lib/config";
 import Image from "next/image";
-import React from "react";
 
 const CustomImage = ({
     src = "",

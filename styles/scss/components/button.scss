@@ -1,0 +1,49 @@
+@import "../base.scss";
+
+
+.btnClass {
+  display: inline-block;
+   height: 45px;
+  color: $white-color;
+  font-size: 1rem;
+  letter-spacing: .005em;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid $btn-theme-color;
+  border-radius: 10rem;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $btn-theme-color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $white-color !important;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: $btn-theme-color !important;
+    border: 1px solid $btn-theme-color !important;
+     border-radius: 10rem;
+    background: $white-color;
+    &:before {
+      width: 100%;
+    }
+  }
+}
