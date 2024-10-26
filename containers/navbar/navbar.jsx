@@ -7,8 +7,7 @@ const Navbar = () => {
         <div className="navbar-container">
                 <Container>
                     <div className="navbar-main">
-                        <div className="navbar-brand">
-                            {/* <img src="logo.png" alt="Logo" /> */}
+                        <div className="navbar-brand pr-3 mr-1">
                             <span>Bajaj Allianz</span>
                         </div>
                         <div className="navbar-menu">
