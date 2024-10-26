@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --btn-theme-color:#f89c30 !important;
 }
 
 @media (prefers-color-scheme: dark) {
