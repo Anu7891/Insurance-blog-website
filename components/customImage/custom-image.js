@@ -11,21 +11,32 @@ const CustomImage = ({
     title = APP_NAME,
     priority = false,
     className = "",
+    placeholder,
+    blurDataURL, // Placeholder for blur data URL, optional
     ...other
 }) => {
-    return (
-        <Image
-            src={src}
-            width={width}
-            height={height}
-            title={title}
-            alt={alt}
-            priority={priority}
-            unoptimized
-            onClick={onClick}
-            {...other}
-        />
-    );
+    const imageProps = {
+        src,
+        width,
+        height,
+        title,
+        alt,
+        priority,
+        className,
+        onClick,
+        unoptimized: true,
+        ...other,
+    };
+
+    // Conditionally add placeholder and blurDataURL if they are provided
+    if (placeholder) {
+        imageProps.placeholder = placeholder;
+    }
+    if (blurDataURL) {
+        imageProps.blurDataURL = blurDataURL;
+    }
+
+    return <Image {...imageProps} />;
 };
 
 export default CustomImage;

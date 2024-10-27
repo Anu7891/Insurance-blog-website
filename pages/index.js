@@ -1,7 +1,5 @@
-import Image from "next/image";
 import localFont from "next/font/local";
-import Navbar from "@/containers/navbar/navbar";
-import BlogPostSection from "@/containers/blog/blogPostSection";
+import HomePage from "../containers/homePage/homePage"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,9 +15,7 @@ const geistMono = localFont({
 export default function Home() {
   return (
         <div>
-          <Navbar/>
-          <BlogPostSection/>
-
+          <HomePage />
         </div>
   );
 }

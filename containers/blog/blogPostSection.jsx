@@ -29,7 +29,6 @@ const BlogPostSection = () => {
             <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
             <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
             <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
-
         </Container>
     );
 };
