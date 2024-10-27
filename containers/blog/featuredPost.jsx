@@ -2,6 +2,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import CustomButton from '@/components/customButton/custom-button';
+import { blurDataURLCreator } from '@/lib/cloudfrontImage';
 
 // Dynamically Imported Components
 const AspectRatioWrapper = dynamic(() => import( '@/components/aspectRatioWrapper/aspect-ratio-wrapper'));
@@ -26,6 +27,11 @@ const FeaturedPost = ({ title = "", blogData = [] }) => {
                             className="rounded-lg"
                             unoptimized
                             priority
+                            placeholder="blur"
+                            blurDataURL={blurDataURLCreator({
+                                width: 469,
+                                height: 469,
+                            })}
                         />
                         </AspectRatioWrapper>
                         <div className="post-details">
@@ -50,6 +56,11 @@ const FeaturedPost = ({ title = "", blogData = [] }) => {
                                 className="rounded-lg w-1/2"
                                 unoptimized
                                 priority={[0, 1, 2, 3]?.includes(index)}
+                                placeholder="blur"
+                                blurDataURL={blurDataURLCreator({
+                                    width: 469,
+                                    height: 469,
+                                })}
                             />
                           </AspectRatioWrapper>
                         </div>
