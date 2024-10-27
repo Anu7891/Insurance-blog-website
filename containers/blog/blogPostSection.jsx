@@ -1,7 +1,7 @@
 import React from 'react';
 import FeaturedPost from './featuredPost';
 import Container from '@/hoc/container';
-import { STATIC_IMG_ONE, STATIC_IMG_THREE, STATIC_IMG_TWO } from '@/lib/config';
+import { STATIC_IMG_ONE, STATIC_IMG_THREE, STATIC_IMG_TWO } from '@/lib/constant';
 
 const BlogPostSection = () => {
 
