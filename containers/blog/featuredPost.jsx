@@ -11,7 +11,7 @@ const CustomImage = dynamic(() => import('@/components/customImage/custom-image'
 const FeaturedPost = ({ blogData = [] }) => {
     return (
         blogData?.length > 0 && blogData?.map((item, index) => (
-            <div className="featured-post flex flex-col bg-white blog-box-shadow p-6 rounded-lg my-5">
+            <div className="featured-post flex flex-col bg-white blog-box-shadow p-6 rounded-lg my-5" key={item?.categoryName + index + "blogs"}>
                 <div className="w-full flex flex-col lg:flex-row gap-6">
                     {/* Main Post */}
                     <div className="main-post w-full lg:w-1/2 flex flex-col">
@@ -41,7 +41,7 @@ const FeaturedPost = ({ blogData = [] }) => {
                     {/* Recent Posts */}
                     <div className="recent-posts w-full lg:w-1/2 space-y-4">
                         {item?.blogs?.slice(1).map((blog, blogIndex) => (
-                            <div key={blogIndex} className="flex gap-4 items-start">
+                            <div  className="flex gap-4 items-start" key={blog?.id + blogIndex}>
                                 <div className="w-1/2">
                                     <AspectRatioWrapper className="blog-image">
                                         <CustomImage
@@ -69,7 +69,7 @@ const FeaturedPost = ({ blogData = [] }) => {
 
                 {/* "See all posts" Button */}
                 <div className="flex justify-end py-4">
-                    <CustomButton className="w-1/5"label="See all posts" />
+                    <CustomButton className="w-1/5" label="See all posts" />
                 </div>
             </div>
         ))

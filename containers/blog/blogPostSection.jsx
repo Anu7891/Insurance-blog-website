@@ -20,7 +20,6 @@ const BlogPostSection = async () => {
 
     const homePageBlogData = blogData?.data;
 
-    console.log(homePageBlogData, "dfdhgfdghd");
 
     return (
         <Container>
