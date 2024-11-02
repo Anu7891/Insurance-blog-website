@@ -1,34 +1,30 @@
 import React from 'react';
 import FeaturedPost from './featuredPost';
 import Container from '@/hoc/container';
-import { STATIC_IMG_ONE, STATIC_IMG_THREE, STATIC_IMG_TWO } from '@/lib/constant';
 
-const BlogPostSection = () => {
+// Temporarily define BASE_API_URL directly here for testing
+const BASE_API_URL = "https://api.insurencepedia.in/v1/insurenceAction";
 
-    const staticBlogPostSection =[
-      {
-            image: STATIC_IMG_ONE,
-            title:"Risk,Trends,and Challenges for Cyber Insurance in India",
-       },
-        {
-            image: STATIC_IMG_TWO,
-            title: "Cyber Insurance Myths Debunked",
-        },
-        {
-            image: STATIC_IMG_ONE,
-            title: "Cyber Insurance Policy - A Necessity for All",
-        },
-        {
-            image: STATIC_IMG_THREE,
-            title: "Ransomware Risks You Need To Know",
-        }
-]
+const BlogPostSection = async () => {
+    // Making an API call to fetch the blog post data
+    const response = await fetch(`${BASE_API_URL}/?skip=0&limit=4&type=0`, {
+        cache: 'no-store' // Prevents caching if needed
+    });
+    let blogData = [];
+
+    if (response.ok) {
+        blogData = await response.json();
+    } else {
+        console.error('Failed to fetch data from the API');
+    }
+
+    const homePageBlogData = blogData?.data;
+
+    console.log(homePageBlogData, "dfdhgfdghd");
 
     return (
         <Container>
-            <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
-            <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
-            <FeaturedPost title={"Cyber Insurance"} blogData={staticBlogPostSection} />
+            <FeaturedPost blogData={homePageBlogData} />
         </Container>
     );
 };
